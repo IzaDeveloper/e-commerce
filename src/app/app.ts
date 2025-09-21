@@ -1,7 +1,8 @@
-import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Component, inject, signal } from '@angular/core';
+import { Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./components/footer/footer";
 import { HeaderComponent } from "./components/header/header";
+import { LoadingService } from './services/loading';
 
 @Component({
   selector: 'app-root',
@@ -15,4 +16,14 @@ import { HeaderComponent } from "./components/header/header";
 })
 export class App {
   protected readonly title = signal('ecommerce');
+  protected readonly loadingService = inject(LoadingService);
+  private router = inject(Router);
+
+  constructor() {
+    this.router.events.subscribe(event => {
+      if (event.constructor.name === 'NavigationEnd') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      }
+    });
+  }
 }

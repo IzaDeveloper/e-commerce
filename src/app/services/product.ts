@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 import { Product } from '../models/product.model';
 
 @Injectable({
@@ -24,7 +24,11 @@ export class ProductService {
   }
 
   getByTag(tag: string): Observable<Product[]> {
-    return this.getAll();
+    return this.getAll().pipe(
+      map(products =>
+        products.filter(p => Array.isArray(p.tags) && p.tags.includes(tag))
+      )
+    );
   }
 
   getOffers(): Observable<Product[]> {
