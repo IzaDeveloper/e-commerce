@@ -5,6 +5,7 @@ import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product';
 import { ProductCardComponent } from "../product-card/product-card";
 import { LoadingComponent } from '../../shared/loading/loading';
+import { BannerCarouselComponent } from "../../shared/banner-carousel/banner-carousel";
 
 @Component({
   selector: 'app-home',
@@ -12,8 +13,9 @@ import { LoadingComponent } from '../../shared/loading/loading';
     CommonModule,
     RouterModule,
     ProductCardComponent,
-    LoadingComponent
-  ],
+    LoadingComponent,
+    BannerCarouselComponent
+],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
