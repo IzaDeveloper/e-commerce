@@ -10,9 +10,9 @@ import { CommonModule } from '@angular/common';
 })
 export class BannerCarouselComponent implements OnInit {
   banners = [
-    { imageUrl: 'https://https://e-commerce-buy-things.vercel.app/images/banner-1', alt: 'Banner 1' },
-    { imageUrl: 'https://https://e-commerce-buy-things.vercel.app/images/banner-2', alt: 'Banner 2' },
-    { imageUrl: 'https://https://e-commerce-buy-things.vercel.app/images/banner-3', alt: 'Banner 3' },
+    { imageUrl: 'https://e-commerce-buy-things.vercel.app/images/banner-1', alt: 'Banner 1' },
+    { imageUrl: 'https://e-commerce-buy-things.vercel.app/images/banner-2', alt: 'Banner 2' },
+    { imageUrl: 'https://e-commerce-buy-things.vercel.app/images/banner-3', alt: 'Banner 3' },
   ];
 
   currentIndex = 0;
