@@ -2,7 +2,7 @@ services:
   - type: web
     name: json-server-ecommerce
     env: node
-    plan: starter
+    plan: free
     buildCommand: "npm install"
     startCommand: "npm run server"
     envVars:
