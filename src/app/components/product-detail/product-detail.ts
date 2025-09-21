@@ -4,13 +4,13 @@ import { ProductService } from '../../services/product';
 import { Product } from '../../models/product.model';
 import { CartService } from '../../services/cart';
 import { CommonModule, Location } from '@angular/common';
-import { Modal } from '../../shared/modal/modal';
+import { ModalComponnent } from '../../shared/modal/modal';
 
 @Component({
   selector: 'app-product-detail',
   imports: [
     CommonModule,
-    Modal
+    ModalComponnent
   ],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.scss'

@@ -33,15 +33,8 @@ export class CartService {
     }
   }
 
-  removeOne(productId: string): void {
-    const index = this.items.findIndex(item => item.id === productId);
-    if (index > -1) {
-      if (this.items[index].quantity > 1) {
-        this.items[index].quantity--;
-      } else {
-        this.items.splice(index, 1);
-      }
-    }
+  removeItem(productId: string): void {
+    this.items = this.items.filter(item => item.id !== productId);
   }
 
   clearCart(): void {

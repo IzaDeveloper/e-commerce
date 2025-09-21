@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   templateUrl: './modal.html',
   styleUrl: './modal.scss'
 })
-export class Modal {
+export class ModalComponnent {
   @Input() product!: Product | null;
   @Input() show: boolean = false;
 
@@ -19,7 +19,7 @@ export class Modal {
   quantity: number = 1;
   totalPrice: number = 0;
 
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   ngOnChanges(): void {
     this.quantity = 1;
@@ -37,15 +37,18 @@ export class Modal {
   }
 
   onQuantityChange(event: any): void {
-    const value = Number(event.target.value);
-    if (
-      value > 0 &&
-      this.product &&
-      (this.product.stock ?? 0) >= value
-    ) {
-      this.quantity = value;
-      this.updateTotalPrice();
+    let value = Number(event.target.value);
+
+    const stock = this.product?.stock ?? 0;
+
+    if (isNaN(value) || value < 1) {
+      value = 1;
+    } else if (value > stock) {
+      value = stock;
     }
+
+    this.quantity = value;
+    this.updateTotalPrice();
   }
 
   onCheckout(): void {
@@ -56,7 +59,7 @@ export class Modal {
     }
   }
 
-  onConfirm(): void {
+  addItems(): void {
     if (this.product) {
       this.confirm.emit({ product: this.product, quantity: this.quantity });
     }

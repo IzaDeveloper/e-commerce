@@ -4,13 +4,15 @@ import { ActivatedRoute, RouterModule } from '@angular/router';
 import { Product } from '../../models/product.model';
 import { ProductService } from '../../services/product';
 import { ProductCardComponent } from "../product-card/product-card";
+import { LoadingComponent } from '../../shared/loading/loading';
 
 @Component({
   selector: 'app-home',
   imports: [
     CommonModule,
     RouterModule,
-    ProductCardComponent
+    ProductCardComponent,
+    LoadingComponent
   ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
@@ -22,6 +24,8 @@ export class HomeComponent implements OnInit {
   ofertas: Product[] = [];
   currentCategory: string = '';
   activeFilter: 'all' | 'lancamentos' | 'mais-vendidos' | 'ofertas' | 'categoria' = 'all';
+
+  loading = false;
 
   constructor(
     private productService: ProductService,
@@ -56,26 +60,58 @@ export class HomeComponent implements OnInit {
   }
 
   loadAll(): void {
-    this.productService.getAll().subscribe(prods => {
-      this.products = prods;
+    this.loading = true;
+    this.productService.getAll().subscribe({
+      next: prods => {
+        this.products = prods;
+        this.loading = false;
+      },
+      error: () => {
+        this.products = [];
+        this.loading = false;
+      }
     });
   }
 
   loadOffers(): void {
-    this.productService.getOffers().subscribe(prods => {
-      this.products = prods;
+    this.loading = true;
+    this.productService.getOffers().subscribe({
+      next: prods => {
+        this.products = prods;
+        this.loading = false;
+      },
+      error: () => {
+        this.products = [];
+        this.loading = false;
+      }
     });
   }
 
   loadByTag(tag: string): void {
-    this.productService.getAll().subscribe(prods => {
-      this.products = prods.filter(p => Array.isArray(p.tags) && p.tags.includes(tag));
+    this.loading = true;
+    this.productService.getByTag(tag).subscribe({
+      next: prods => {
+        this.products = prods;
+        this.loading = false;
+      },
+      error: () => {
+        this.products = [];
+        this.loading = false;
+      }
     });
   }
 
   loadCategory(category: string): void {
-    this.productService.getByCategory(category).subscribe(prods => {
-      this.products = prods;
+    this.loading = true;
+    this.productService.getByCategory(category).subscribe({
+      next: prods => {
+        this.products = prods;
+        this.loading = false;
+      },
+      error: () => {
+        this.products = [];
+        this.loading = false;
+      }
     });
   }
 }

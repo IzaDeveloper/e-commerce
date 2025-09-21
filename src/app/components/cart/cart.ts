@@ -25,9 +25,18 @@ export class CartComponent implements OnInit {
   }
 
   updateQuantity(productId: string, quantity: number): void {
-    if (quantity < 1) {
+    const item = this.items.find(i => i.id === productId);
+
+    if (!item) return;
+
+    const stock = item.stock ?? 0;
+
+    if (isNaN(quantity) || quantity < 1) {
       quantity = 1;
+    } else if (quantity > stock) {
+      quantity = stock;
     }
+
     this.cartService.updateQuantity(productId, quantity);
     this.loadCart();
   }
@@ -46,27 +55,37 @@ export class CartComponent implements OnInit {
     }, 0);
   }
 
+  get totalEconomia(): number {
+    return this.items.reduce((total, item) => {
+      if (item.offer && item.offerPrice !== undefined && item.offerPrice < item.price) {
+        const economiaItem = (item.price - item.offerPrice) * item.quantity;
+        return total + economiaItem;
+      }
+      return total;
+    }, 0);
+  }
+
   removeOneItem(index: number): void {
     const item = this.items[index];
     if (!item) return;
 
-    this.cartService.removeOne(item.id);
+    this.cartService.removeItem(item.id);
     this.loadCart();
   }
 
-  clearCart(): void {
-    this.cartService.clearCart();
-    this.loadCart();
+  addItems(): void {
+    this.router.navigate(['/']);
   }
 
   checkout(): void {
     if (this.items.length !== 0) {
-      alert('Compra realizada com sucesso!')
+      alert('Compra realizada com sucesso!');
+      this.router.navigate(['/']);
       return;
     }
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/']);
   }
 }

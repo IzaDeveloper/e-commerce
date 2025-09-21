@@ -23,7 +23,7 @@
                         (input)="onQuantityChange($event)" />
                 </div>
 
-                <p class="product-detail__unit-price" NgIf="product.offer && product.offerPrice">
+                <p class="product-detail__unit-price" *ngIf="product.offer && product.offerPrice">
                     <span class="original-price">{{ product.price | currency:'BRL' }}</span>
                     <span class="offer-price">{{ product.offerPrice | currency:'BRL' }}</span>
                 </p>
@@ -43,8 +43,8 @@
                 </p>
 
                 <div class="product-detail__buttons">
-                    <button class="btn-confirm" (click)="onConfirm()">
-                        Adicionar mais itens
+                    <button class="btn-confirm" (click)="addItems()">
+                        Continuar comprando
                     </button>
 
                     <button class="btn-checkout" (click)="onCheckout()">

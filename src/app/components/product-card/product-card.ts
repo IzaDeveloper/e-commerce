@@ -3,14 +3,14 @@ import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { CartService } from '../../services/cart';
-import { Modal } from '../../shared/modal/modal';
+import { ModalComponnent } from '../../shared/modal/modal';
 
 @Component({
   selector: 'app-product-card',
   imports: [
     CommonModule,
     RouterModule,
-    Modal
+    ModalComponnent
   ],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss'

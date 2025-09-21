@@ -1,37 +1,43 @@
 <div class="product-list">
-  <section *ngIf="activeFilter === 'categoria'">
-    <h2>Categoria: {{ currentCategory }}</h2>
-    <div class="product-list__grid">
-      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
-    </div>
-  </section>
 
-  <section *ngIf="activeFilter === 'lancamentos'">
-    <h2>Lançamentos</h2>
-    <div class="product-list__grid">
-      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
-    </div>
-  </section>
+  <app-loading *ngIf="loading"></app-loading>
 
-  <section *ngIf="activeFilter === 'mais-vendidos'">
-    <h2>Mais Vendidos</h2>
-    <div class="product-list__grid">
-      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
-    </div>
-  </section>
-  <section *ngIf="activeFilter === 'ofertas'">
-    <h2>Ofertas</h2>
-    <div class="product-list__grid">
-      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
-    </div>
-  </section>
+  <article *ngIf="!loading && products.length > 0">
+    <section *ngIf="activeFilter === 'categoria'">
+      <h2>Categoria: {{ currentCategory }}</h2>
+      <div class="product-list__grid">
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+      </div>
+    </section>
 
-  <section *ngIf="activeFilter === 'all'">
-    <h2>Todos os Produtos</h2>
-    <div class="product-list__grid">
-      <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
-    </div>
-  </section>
+    <section *ngIf="activeFilter === 'lancamentos'">
+      <h2>Lançamentos</h2>
+      <div class="product-list__grid">
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+      </div>
+    </section>
 
-  <p *ngIf="products.length === 0">Nenhum produto encontrado.</p>
+    <section *ngIf="activeFilter === 'mais-vendidos'">
+      <h2>Mais Vendidos</h2>
+      <div class="product-list__grid">
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+      </div>
+    </section>
+
+    <section *ngIf="activeFilter === 'ofertas'">
+      <h2>Ofertas</h2>
+      <div class="product-list__grid">
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+      </div>
+    </section>
+
+    <section *ngIf="activeFilter === 'all'">
+      <h2>Todos os Produtos</h2>
+      <div class="product-list__grid">
+        <app-product-card *ngFor="let product of products" [product]="product"></app-product-card>
+      </div>
+    </section>
+  </article>
+
+  <p *ngIf="!loading && products.length === 0">Nenhum produto encontrado.</p>
 </div>

@@ -22,7 +22,7 @@
     </p>
 
     <div class="product-card__buttons">
-      <a [routerLink]="['/product', product.id]">Ver detalhes</a>
+      <a class="product-card__btn-details" [routerLink]="['/product', product.id]">Ver detalhes</a>
 
       <button class="product-card__btn-cart" (click)="addToCart(product)">
         Adicionar ao carrinho
