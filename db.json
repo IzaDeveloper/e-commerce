@@ -1,0 +1,115 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "Tênis Esportivo",
+      "description": "Tênis confortável para corrida",
+      "price": 199.90,
+      "offerPrice": 159.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Calçados",
+      "tags": ["lancamento"],
+      "offer": true,
+      "stock": 10,
+      "brand": "Nike"
+    },
+    {
+      "id": "2",
+      "name": "Tênis Casual",
+      "description": "Estilo urbano e moderno",
+      "price": 179.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Calçados",
+      "tags": ["mais-vendido"],
+      "offer": false,
+      "stock": 5,
+      "brand": "Adidas"
+    },
+    {
+      "id": "3",
+      "name": "Chinelo Confort",
+      "description": "Ideal para o verão",
+      "price": 49.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Calçados",
+      "tags": [],
+      "offer": false,
+      "stock": 15,
+      "brand": "Havaianas"
+    },
+    {
+      "id": "4",
+      "name": "Camiseta Básica",
+      "description": "Camiseta 100% algodão",
+      "price": 49.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Roupas",
+      "tags": ["mais-vendido"],
+      "offer": false,
+      "stock": 20,
+      "brand": "Reserva"
+    },
+    {
+      "id": "5",
+      "name": "Jaqueta Jeans",
+      "description": "Clássica e estilosa",
+      "price": 229.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Roupas",
+      "tags": ["lancamento"],
+      "offer": false,
+      "stock": 8,
+      "brand": "Levi's"
+    },
+    {
+      "id": "6",
+      "name": "Vestido Floral",
+      "description": "Ideal para o verão",
+      "price": 139.90,
+      "offerPrice": 99.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Roupas",
+      "tags": ["oferta"],
+      "offer": true,
+      "stock": 12,
+      "brand": "Zara"
+    },
+    {
+      "id": "7",
+      "name": "Mochila",
+      "description": "Mochila para uso diário",
+      "price": 89.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Acessórios",
+      "tags": ["mais-vendido"],
+      "offer": false,
+      "stock": 18,
+      "brand": "Nordweg"
+    },
+    {
+      "id": "8",
+      "name": "Relógio Esportivo",
+      "description": "Resistente à água e moderno",
+      "price": 299.90,
+      "offerPrice": 249.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Acessórios",
+      "tags": ["lancamento"],
+      "offer": true,
+      "stock": 6,
+      "brand": "G-Shock"
+    },
+    {
+      "id": "9",
+      "name": "Boné",
+      "description": "Perfeito para dias de sol",
+      "price": 59.90,
+      "imageUrl": "https://placehold.co/600x400",
+      "category": "Acessórios",
+      "tags": [],
+      "offer": false,
+      "stock": 25,
+      "brand": "New Era"
+    }
+  ]
+}

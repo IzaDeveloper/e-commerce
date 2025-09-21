@@ -1,1 +1,31 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+
+*,
+::after,
+::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+}
+
+body>app-root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header>div,
+footer>div {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 1.5rem;
+}
+
+main {
+    max-width: 1080px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+    flex: 1;
+}

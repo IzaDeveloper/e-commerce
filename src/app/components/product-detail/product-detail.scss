@@ -1,0 +1,118 @@
+.product-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  &__image {
+    flex: 1;
+    max-width: 400px;
+
+    img {
+      width: 100%;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+  }
+
+  &__info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__detail {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__name {
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  &__description {
+    font-size: 1.1rem;
+    color: #555;
+  }
+
+  &__meta {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+  }
+
+  &__offer {
+    color: #d9534f;
+    font-weight: bold;
+  }
+
+  &__price {
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    .original-price {
+      text-decoration: line-through;
+      color: #999;
+    }
+
+    .offer-price {
+      color: #e60000;
+      font-weight: bold;
+    }
+
+    .discount-percent {
+      color: #28a745;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .normal-price {
+      color: #222;
+    }
+  }
+
+  &__btn-cart {
+    background-color: #f28482;
+    color: #fff;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+
+    &:hover {
+      background-color: #d96c6a;
+    }
+  }
+}
+
+.btn-back {
+  background: none;
+  border: none;
+  color: #555;
+  font-size: 14px;
+  cursor: pointer;
+  padding: 4px 8px;
+  margin-bottom: 12px;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: #000;
+  }
+}

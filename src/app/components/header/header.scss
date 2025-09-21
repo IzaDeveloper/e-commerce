@@ -1,0 +1,130 @@
+.header {
+  background-color: #1e1e1e;
+  color: white;
+  min-height: 75px;
+  display: flex;
+  align-items: center;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .logo {
+    width: 120px;
+    display: block;
+  }
+
+  .menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    cursor: pointer;
+  }
+
+  .nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    a,
+    .dropdown span {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+    }
+
+    .dropdown {
+      span {
+        display: block;
+      }
+
+      ul {
+        width: 100%;
+        background: white;
+        color: #1e1e1e;
+        list-style: none;
+        padding: 1rem;
+        left: 0;
+        top: 75px;
+        box-shadow: none;
+        position: absolute;
+        z-index: 1;
+        box-shadow: 0 4px 12px #0000004d;
+
+        li:not(:last-child) {
+          margin: 0.5rem 0;
+          border-bottom: 1px solid #ddd;
+        }
+
+        a {
+          text-decoration: none;
+          color: inherit;
+          display: block;
+          padding: 0.3rem 0;
+
+          &:hover {
+            color: #f28482;
+          }
+        }
+      }
+    }
+
+    &.open {
+      flex-direction: column;
+      align-items: flex-start;
+
+      .dropdown {
+        width: 100%;
+
+        ul {
+          width: 100%;
+          padding: 1rem;
+        }
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+
+    .container {
+      flex-wrap: wrap;
+    }
+
+    .nav {
+      display: none;
+      flex-direction: column;
+      align-items: flex-start;
+      width: 100%;
+
+      a {
+        width: 100%;
+      }
+
+      &.open {
+        display: flex;
+        padding: 2rem 0rem 0rem;
+      }
+
+      .dropdown {
+        width: 100%;
+
+        ul {
+          width: 100%;
+          padding: 1rem;
+          background: #1e1e1e;
+          color: white;
+          position: static;
+          box-shadow: none;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+<button class="btn-back" (click)="goBack()">← Voltar</button>
+
+
+<h2>Meu Carrinho</h2>
+
+<div *ngIf="items.length === 0" class="empty-cart">
+  Seu carrinho está vazio.
+</div>
+
+<div class="cart-container" *ngIf="items.length !== 0">
+
+  <ul *ngIf="items.length > 0" class="cart-list">
+    <li *ngFor="let item of items; let i = index" class="cart-item">
+      <img [src]="item.imageUrl" [alt]="item.name" class="product-image" />
+      <div class="item-info">
+        <h3>{{ item.name }}</h3>
+        <p>
+          Quantidade:
+          <input type="number" [value]="item.quantity" min="1" [max]="item.stock"
+            (change)="updateQuantity(item.id, $event.target.valueAsNumber)" />
+        </p>
+        <p>
+          Preço unitário:
+          <span *ngIf="item.offer && item.offerPrice" class="original-price">
+            {{ item.price | currency:'BRL' }}
+          </span>
+          <span class="offer-price" *ngIf="item.offer && item.offerPrice">
+            {{ item.offerPrice | currency:'BRL' }}
+          </span>
+          <span *ngIf="!item.offer">
+            {{ item.price | currency:'BRL' }}
+          </span>
+        </p>
+        <p>
+          Valor total:
+          <strong>
+            {{
+            (item.offer && item.offerPrice ? item.offerPrice : item.price)
+            * item.quantity | currency:'BRL'
+            }}
+          </strong>
+        </p>
+      </div>
+
+      <div class="item-actions">
+        <button class="btn-remove" (click)="removeOneItem(i)">Excluir</button>
+      </div>
+    </li>
+  </ul>
+
+  <div *ngIf="items.length > 0" class="cart-footer">
+    <p>Total: <strong>{{ total | currency:'BRL' }}</strong></p>
+    <div class="buttons">
+      <button class="btn-clear" (click)="clearCart()">Limpar Carrinho</button>
+      <button class="btn-buy" (click)="checkout()">Comprar</button>
+    </div>
+  </div>
+</div>
