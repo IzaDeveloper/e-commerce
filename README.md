@@ -1,59 +1,164 @@
-# Ecommerce
+# E-commerce
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.3.2.
+Choose your language / Escolha seu idioma
 
-## Development server
+- [English](#english)
+- [Português](#português)
 
-To start a local development server, run:
 
+## English
+
+An e-commerce application built with Angular, TypeScript, and Sass. It features a shopping cart, product catalog, discount support, and a RESTful API using json-server. Deploy-ready for platforms like Render.
+
+
+## 🚀 Features
+
+- ✅ Product listing by category
+- ✅ Shopping cart with quantity control
+- ✅ Add, edit quantity, and remove products from cart
+- ✅ Cart total and discount calculation
+- ✅ Backend mock with JSON Server
+- ✅ Deployment-ready (frontend + backend)
+- ✅ Responsive and styled with Sass
+
+## 🖼️ Preview
+
+![preview](https://your-image-link-if-you-have-one)
+
+
+## 🧠 Technologies used
+
+- **Angular**
+- **TypeScript** 
+- **Sass** 
+- **i18next + react-i18next** 
+- **JSON Server (REST API)**
+- **Express (for deployment)** 
+
+## 📦 Install
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/IzaDeveloper/ecommerce.git
+cd ecommerce
+```
+
+### 2. Install the dependencies
+```bash
+npm install
+```
+
+### 3. Start the project (frontend only)
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
+### 4. Run JSON Server (backend only)
 ```bash
-ng generate component component-name
+npm run server
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+## 🌐 API Endpoints (JSON Server)
+
+| Endpoint                          | Description                       |
+| --------------------------------- | --------------------------------- |
+| `GET /products`                   | Get all products                  |
+| `GET /products/:id`               | Get a single product by ID        |
+| `GET /products?category=Category` | Get products filtered by category |
+| `GET /products?offer=true`        | Get products with active offers   |
+
+## 🌍 Language Support
+
+Translation is done using i18next.
+- en.json
+- pt.json
+
+## 🧰 Main Dependencies
+
+| Package       | Purpose                   |
+| ------------- | ------------------------- |
+| `@angular/*`  | Frontend framework        |
+| `typescript`  | Static typing             |
+| `sass`        | Styling                   |
+| `json-server` | Mock REST API             |
+| `express`     | Server for production use |
+
+👨‍💻 Author
+
+Developed by [Izabelle](https://github.com/IzaDeveloper) 💻
+
+## Português
+
+Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta com listagem de produtos, carrinho de compras, suporte a descontos e API REST simulada com json-server. Pronto para deploy em plataformas como Render.
+
+## 🚀 Funcionalidades
+
+- ✅ Listagem de produtos por categoria
+- ✅ Carrinho com controle de quantidade
+- ✅ Adicionar, editar quantidade e remover produtos do carrinho
+- ✅ Cálculo de total e desconto
+- ✅ API fake com JSON Server
+- ✅ Pronto para deploy (frontend + backend)
+- ✅ Responsivo e estilizado com Sass
+
+## 🖼️ Demonstração
+
+![preview](https://your-image-link-if-you-have-one)
+
+
+## 🧠 Tecnologias utilizadas
+
+- **Angular**
+- **TypeScript** 
+- **Sass** 
+- **i18next + react-i18next** 
+- **JSON Server (API REST)**
+- **Express (para produção)** 
+
+## 📦 Instalação
+
+### 1. Clone o repositório
 
 ```bash
-ng generate --help
+git clone https://github.com/IzaDeveloper/ecommerce.git
+cd ecommerce
 ```
 
-## Building
-
-To build the project run:
-
+### 2. Instale as dependências
 ```bash
-ng build
+npm install
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
+### 3. Inicie o projeto (apenas front-end)
 ```bash
-ng test
+ng serve
 ```
 
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
+### 4. Inicie o JSON Server (somente backend)
 ```bash
-ng e2e
+npm run server
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+## 🌐 Endpoints da API (JSON Server)
 
-## Additional Resources
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 🌍 Suporte a idiomas
+
+A tradução é feita com i18next.
+
+- en.json
+- pt.json
+
+## 🧰Dependências principais
+
+| Endpoint                           | Descrição                           |
+| ---------------------------------- | ----------------------------------- |
+| `GET /products`                    | Retorna todos os produtos           |
+| `GET /products/:id`                | Retorna um produto pelo ID          |
+| `GET /products?category=Categoria` | Retorna produtos por categoria      |
+| `GET /products?offer=true`         | Retorna produtos com ofertas ativas |
+
+👨‍💻Autor
+
+Desenvolvido por [Izabelle](https://github.com/IzaDeveloper) 💻
