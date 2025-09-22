@@ -32,7 +32,7 @@ An e-commerce application built with Angular, TypeScript, and Sass. It features 
 - **Angular**
 - **TypeScript** 
 - **Sass** 
-- **i18next + react-i18next** 
+- **i18next + ngx-translate** 
 - **JSON Server (REST API)**
 - **Express (for deployment)** 
 
@@ -114,7 +114,7 @@ Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta c
 - **Angular**
 - **TypeScript** 
 - **Sass** 
-- **i18next + react-i18next** 
+- **i18next + ngx-translate** 
 - **JSON Server (API REST)**
 - **Express (para produção)** 
 
