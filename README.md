@@ -24,7 +24,7 @@ An e-commerce application built with Angular, TypeScript, and Sass. It features 
 
 ## 🖼️ Preview
 
-![preview](https://your-image-link-if-you-have-one)
+![preview](https://e-commerce-buy-things.vercel.app/preview.png)
 
 
 ## 🧠 Technologies used
@@ -106,7 +106,7 @@ Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta c
 
 ## 🖼️ Demonstração
 
-![preview](https://your-image-link-if-you-have-one)
+![preview](https://e-commerce-buy-things.vercel.app/preview.png)
 
 
 ## 🧠 Tecnologias utilizadas
