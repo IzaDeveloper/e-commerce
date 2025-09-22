@@ -91,7 +91,7 @@ Developed by [Izabelle](https://github.com/IzaDeveloper) 💻
 
 ## Português
 
-Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta com listagem de produtos, carrinho de compras, suporte a descontos e API REST simulada com json-server e suporte a múltiplos idiomas (PT/EN). Pronto para deploy em plataformas como Render.
+Um e-commerce desenvolvido com Angular, TypeScript e Sass. Conta com listagem de produtos, carrinho de compras, suporte a descontos e API REST simulada com json-server e suporte a múltiplos idiomas (PT/EN). Pronto para deploy em plataformas como Render.
 
 ## 🚀 Funcionalidades
 
