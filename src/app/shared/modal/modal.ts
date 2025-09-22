@@ -2,10 +2,14 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { Product } from '../../models/product.model';
 import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-modal',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TranslateModule
+  ],
   templateUrl: './modal.html',
   styleUrl: './modal.scss'
 })

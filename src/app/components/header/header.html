@@ -12,28 +12,43 @@
     <button class="menu-toggle" (click)="toggleMenu()">{{ menuOpen ? '✕' : '☰' }}</button>
 
     <nav class="nav" [class.open]="menuOpen">
-      <a routerLink="/" (click)="closeMenu()">Home</a>
-      <a routerLink="/cart" (click)="closeMenu()">Carrinho</a>
+      <a routerLink="/" (click)="closeMenu()">{{ 'HEADER.HOME' | translate }}</a>
+      <a routerLink="/cart" (click)="closeMenu()">{{ 'HEADER.CART' | translate }}</a>
 
       <div class="dropdown">
-        <span (click)="toggleDropdown('products')">Produtos ▾</span>
+        <span (click)="toggleDropdown('products')">{{ 'HEADER.PRODUCTS.TITLE' | translate }} ▾</span>
         <ul *ngIf="dropdowns.products">
-          <li><a [routerLink]="['/']" [queryParams]="{ tag: 'lancamento' }" (click)="closeMenu()">Lançamentos</a></li>
-          <li><a [routerLink]="['/']" [queryParams]="{ tag: 'mais-vendido' }" (click)="closeMenu()">Mais vendidos</a>
-          </li>
-          <li><a [routerLink]="['/']" [queryParams]="{ offer: true }" (click)="closeMenu()">Ofertas</a></li>
-          <li><a [routerLink]="['/']" (click)="closeMenu()">Todos os produtos</a></li>
+          <li><a [routerLink]="['/']" [queryParams]="{ tag: 'new' }" (click)="closeMenu()">{{
+              'HEADER.PRODUCTS.LAUNCHES' | translate }}</a></li>
+          <li><a [routerLink]="['/']" [queryParams]="{ tag: 'bestsellers' }" (click)="closeMenu()">{{
+              'HEADER.PRODUCTS.BESTSELLERS' | translate }}</a></li>
+          <li><a [routerLink]="['/']" [queryParams]="{ offer: true }" (click)="closeMenu()">{{ 'HEADER.PRODUCTS.OFFERS'
+              | translate }}</a></li>
+          <li><a [routerLink]="['/']" (click)="closeMenu()">{{ 'HEADER.PRODUCTS.ALL' | translate }}</a></li>
         </ul>
       </div>
 
       <div class="dropdown">
-        <span (click)="toggleDropdown('categories')">Categorias ▾</span>
+        <span (click)="toggleDropdown('categories')">{{ 'HEADER.CATEGORIES.TITLE' | translate }} ▾</span>
         <ul *ngIf="dropdowns.categories">
-          <li><a [routerLink]="['/']" [queryParams]="{ category: 'Roupas' }" (click)="closeMenu()">Roupas</a></li>
-          <li><a [routerLink]="['/']" [queryParams]="{ category: 'Calçados' }" (click)="closeMenu()">Calçados</a></li>
-          <li><a [routerLink]="['/']" [queryParams]="{ category: 'Acessórios' }" (click)="closeMenu()">Acessórios</a>
-          </li>
+          <li><a [routerLink]="['/']" [queryParams]="{ category: 'HEADER.CATEGORIES.CLOTHES' | translate }" (click)="closeMenu()">{{
+              'HEADER.CATEGORIES.CLOTHES' | translate }}</a></li>
+          <li><a [routerLink]="['/']" [queryParams]="{ category: 'HEADER.CATEGORIES.SHOES' | translate }" (click)="closeMenu()">{{
+              'HEADER.CATEGORIES.SHOES' | translate }}</a></li>
+          <li><a [routerLink]="['/']" [queryParams]="{ category: 'HEADER.CATEGORIES.ACCESSORIES' | translate }" (click)="closeMenu()">{{
+              'HEADER.CATEGORIES.ACCESSORIES' | translate }}</a></li>
         </ul>
+      </div>
+
+      <div class="language-switch">
+        <div class="lang-btn-container">
+          <button (click)="setLanguage('pt')" [class.active]="currentLang === 'pt'">
+            {{ 'HEADER.LANGUAGE.PT' | translate }}
+          </button>
+          <button (click)="setLanguage('en')" [class.active]="currentLang === 'en'">
+            {{ 'HEADER.LANGUAGE.EN' | translate }}
+          </button>
+        </div>
       </div>
     </nav>
   </div>

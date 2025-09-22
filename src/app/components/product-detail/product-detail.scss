@@ -32,6 +32,12 @@
     gap: 0.5rem;
   }
 
+  &__group {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
   &__name {
     font-size: 2rem;
     font-weight: bold;

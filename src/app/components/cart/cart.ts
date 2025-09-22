@@ -3,10 +3,14 @@ import { CartItem } from '../../models/product.model';
 import { CartService } from '../../services/cart';
 import { CommonModule, Location } from '@angular/common';
 import { Router } from '@angular/router';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-cart',
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    TranslateModule
+  ],
   templateUrl: './cart.html',
   styleUrl: './cart.scss'
 })

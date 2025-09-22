@@ -1,44 +1,56 @@
 <div class="container-layout">
-  <button class="btn-back" (click)="goBack()">← Voltar</button>
+  <button class="btn-back" (click)="goBack()">← {{ 'PRODUCT_DETAIL.BACK' | translate }}</button>
 
   <div *ngIf="product" class="product-detail">
-
     <div class="product-detail__image">
       <img [src]="product.imageUrl" [alt]="product.name" />
     </div>
 
     <div class="product-detail__info">
-      <div class="product-detail__detail">
-        <h1 class="product-detail__name">{{ product.name }}</h1>
-        <p class="product-detail__description">{{ product.description }}</p>
+      <div class="product-detail__group">
+        <div class="product-detail__detail">
+          <h1 class="product-detail__name">{{ product.name }}</h1>
+          <p class="product-detail__description">{{ product.description }}</p>
+        </div>
+
+        <ul class="product-detail__meta">
+          <li>
+            <strong>{{ 'PRODUCT_DETAIL.CATEGORY' | translate }}:</strong>
+            {{ product.category || ( 'PRODUCT_DETAIL.NOT_AVAILABLE' | translate ) }}
+          </li>
+          <li>
+            <strong>{{ 'PRODUCT_DETAIL.BRAND' | translate }}:</strong>
+            {{ product.brand || ( 'PRODUCT_DETAIL.NOT_PROVIDED' | translate ) }}
+          </li>
+          <li>
+            <strong>{{ 'PRODUCT_DETAIL.STOCK' | translate }}:</strong>
+            {{ product.stock || 0 }} {{ 'PRODUCT_DETAIL.UNITS' | translate }}
+          </li>
+          <li>
+            <strong>{{ 'PRODUCT_DETAIL.TAGS' | translate }}:</strong>
+            {{ product.tags?.join(', ') || ( 'PRODUCT_DETAIL.NONE' | translate ) }}
+          </li>
+        </ul>
+
+        <p class="product-detail__price" *ngIf="product.offer && product.offerPrice">
+          <span class="original-price">{{ product.price | currency:'BRL' }}</span>
+          <span class="offer-price">{{ product.offerPrice | currency:'BRL' }}</span>
+          <span class="discount-percent">
+            ({{ calculateDiscount(product.price, product.offerPrice) }}% {{ 'PRODUCT_DETAIL.OFF' | translate }})
+          </span>
+        </p>
+
+        <p class="product-detail__price" *ngIf="!product.offer">
+          <span class="normal-price">{{ product.price | currency:'BRL' }}</span>
+        </p>
       </div>
 
-      <ul class="product-detail__meta">
-        <li><strong>Categoria:</strong> {{ product.category || 'N/A' }}</li>
-        <li><strong>Marca:</strong> {{ product.brand || 'Não informado' }}</li>
-        <li><strong>Em estoque:</strong> {{ product.stock || 0 }} unidades</li>
-        <li><strong>Tags:</strong> {{ product.tags?.join(', ') || 'Nenhuma' }}</li>
-      </ul>
-
-      <p class="product-detail__price" *ngIf="product.offer && product.offerPrice">
-        <span class="original-price">{{ product.price | currency:'BRL' }}</span>
-        <span class="offer-price">{{ product.offerPrice | currency:'BRL' }}</span>
-        <span class="discount-percent">
-          ({{ calculateDiscount(product.price, product.offerPrice) }}% OFF)
-        </span>
-      </p>
-
-      <p class="product-detail__price" *ngIf="!product.offer">
-        <span class="normal-price">{{ product.price | currency:'BRL' }}</span>
-      </p>
-
-
       <button class="product-detail__btn-cart" (click)="addToCart(product)">
-        Adicionar ao carrinho
+        {{ 'PRODUCT_DETAIL.ADD_TO_CART' | translate }}
       </button>
     </div>
   </div>
 
-  <app-modal [product]="selectedProduct" [show]="showModal" (close)="closeModal()"
-    (confirm)="onConfirmAdd($event)"></app-modal>
+  <app-modal [product]="selectedProduct" [show]="showModal" (close)="closeModal()" (confirm)="onConfirmAdd($event)">
+  </app-modal>
 </div>

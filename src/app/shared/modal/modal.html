@@ -1,57 +1,64 @@
 <div *ngIf="show && product as product" class="modal-overlay">
-    <div class="modal">
-        <button class="close-button" (click)="onClose()">✕</button>
+  <div class="modal">
+    <button class="close-button" (click)="onClose()">✕</button>
 
-        <div class="product-detail">
-            <div class="product-detail__image">
-                <img [src]="product.imageUrl" [alt]="product.name" />
-            </div>
+    <div class="product-detail">
+      <div class="product-detail__image">
+        <img [src]="product.imageUrl" [alt]="product.name" />
+      </div>
 
-            <div class="product-detail__info">
-                <div class="product-detail__detail">
-                    <h1 class="product-detail__name">{{ product.name }}</h1>
-                    <p class="product-detail__description">{{ product.description }}</p>
-                </div>
-
-                <ul class="product-detail__meta">
-                    <li><strong>Estoque disponível:</strong> {{ product.stock }} unidades</li>
-                </ul>
-
-                <div class="product-detail__quantity-selector">
-                    <label for="quantity">Quantidade:</label>
-                    <input type="number" id="quantity" [value]="quantity" min="1" [max]="product.stock"
-                        (input)="onQuantityChange($event)" />
-                </div>
-
-                <p class="product-detail__unit-price" *ngIf="product.offer && product.offerPrice">
-                    <span class="original-price">{{ product.price | currency:'BRL' }}</span>
-                    <span class="offer-price">{{ product.offerPrice | currency:'BRL' }}</span>
-                </p>
-                <p class="product-detail__unit-price" *ngIf="!product.offer">
-                    <span class="normal-price">{{ product.price | currency:'BRL' }}</span>
-                </p>
-
-
-                <p class="product-detail__price">
-                    Total:
-                    <strong>
-                        {{
-                        (product.offer && product.offerPrice ? product.offerPrice : product.price) * quantity
-                        | currency:'BRL'
-                        }}
-                    </strong>
-                </p>
-
-                <div class="product-detail__buttons">
-                    <button class="btn-confirm" (click)="addItems()">
-                        Continuar comprando
-                    </button>
-
-                    <button class="btn-checkout" (click)="onCheckout()">
-                        Finalizar compra
-                    </button>
-                </div>
-            </div>
+      <div class="product-detail__info">
+        <div class="product-detail__detail">
+          <h1 class="product-detail__name">{{ product.name }}</h1>
+          <p class="product-detail__description">{{ product.description }}</p>
         </div>
+
+        <ul class="product-detail__meta">
+          <li>
+            <strong>{{ 'MODAL.STOCK_AVAILABLE' | translate }}:</strong>
+            {{ product.stock }} {{ 'MODAL.UNITS' | translate }}
+          </li>
+        </ul>
+
+        <div class="product-detail__quantity-selector">
+          <label for="quantity">{{ 'MODAL.QUANTITY' | translate }}:</label>
+          <input
+            type="number"
+            id="quantity"
+            [value]="quantity"
+            min="1"
+            [max]="product.stock"
+            (input)="onQuantityChange($event)" />
+        </div>
+
+        <p class="product-detail__unit-price" *ngIf="product.offer && product.offerPrice">
+          <span class="original-price">{{ product.price | currency:'BRL' }}</span>
+          <span class="offer-price">{{ product.offerPrice | currency:'BRL' }}</span>
+        </p>
+        <p class="product-detail__unit-price" *ngIf="!product.offer">
+          <span class="normal-price">{{ product.price | currency:'BRL' }}</span>
+        </p>
+
+        <p class="product-detail__price">
+          {{ 'MODAL.TOTAL' | translate }}:
+          <strong>
+            {{
+              (product.offer && product.offerPrice ? product.offerPrice : product.price) * quantity
+              | currency:'BRL'
+            }}
+          </strong>
+        </p>
+
+        <div class="product-detail__buttons">
+          <button class="btn-confirm" (click)="addItems()">
+            {{ 'MODAL.CONTINUE_SHOPPING' | translate }}
+          </button>
+
+          <button class="btn-checkout" (click)="onCheckout()">
+            {{ 'MODAL.CHECKOUT' | translate }}
+          </button>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

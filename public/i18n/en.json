@@ -1,0 +1,104 @@
+{
+  "HEADER": {
+    "HOME": "Home",
+    "CART": "Cart",
+    "PRODUCTS": {
+      "TITLE": "Products",
+      "LAUNCHES": "Launches",
+      "BESTSELLERS": "Bestsellers",
+      "OFFERS": "Offers",
+      "ALL": "All Products"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categories",
+      "CLOTHES": "Clothes",
+      "SHOES": "Shoes",
+      "ACCESSORIES": "Accessories"
+    },
+    "LANGUAGE": {
+      "PT": "PT",
+      "EN": "EN"
+    }
+  },
+  "FOOTER": {
+    "PRODUCTS": {
+      "TITLE": "Products",
+      "LAUNCHES": "Launches",
+      "BESTSELLERS": "Bestsellers",
+      "OFFERS": "Offers",
+      "ALL_PRODUCTS": "All Products"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categories",
+      "ALL": "All",
+      "CLOTHES": "Clothes",
+      "SHOES": "Shoes",
+      "ACCESSORIES": "Accessories"
+    },
+    "SUPPORT": {
+      "TITLE": "Support",
+      "SUPPORT": "Customer Service",
+      "FAQ": "FAQ",
+      "EXCHANGES": "Exchanges and Returns",
+      "CONTACT": "Contact Us"
+    },
+    "INFO": {
+      "TITLE": "Information",
+      "ABOUT_US": "About Us",
+      "PRIVACY_POLICY": "Privacy Policy",
+      "TERMS_OF_USE": "Terms of Use",
+      "PAYMENT_METHODS": "Payment Methods"
+    },
+    "SOCIAL": {
+      "TITLE": "Social Media"
+    },
+    "RIGHTS_RESERVED": "All rights reserved."
+  },
+  "HOME": {
+    "PRODUCTS": "Products",
+    "CATEGORY": "Category",
+    "LAUNCHES": "Launches",
+    "BESTSELLERS": "Bestsellers",
+    "OFFERS": "Offers",
+    "ALL_PRODUCTS": "All Products",
+    "NO_PRODUCTS": "No products found."
+  },
+  "CART": {
+    "TITLE": "My Cart",
+    "EMPTY": "Your cart is empty.",
+    "UNIT_PRICE": "Unit Price",
+    "TOTAL_PRICE": "Total Price",
+    "DISCOUNT": "Discount",
+    "TOTAL": "Total",
+    "CONTINUE": "Continue Shopping",
+    "BUY": "Buy",
+    "BACK": "← Back",
+    "QUANTITY": "Quantity"
+  },
+  "PRODUCT_CARD": {
+    "VIEW_DETAILS": "View Details",
+    "ADD_TO_CART": "Add to Cart",
+    "OFF": "OFF"
+  },
+  "PRODUCT_DETAIL": {
+    "BACK": "Back",
+    "CATEGORY": "Category",
+    "BRAND": "Brand",
+    "STOCK": "In Stock",
+    "UNITS": "units",
+    "TAGS": "Tags",
+    "NOT_AVAILABLE": "N/A",
+    "NOT_PROVIDED": "Not provided",
+    "NONE": "None",
+    "OFF": "OFF",
+    "ADD_TO_CART": "Add to Cart"
+  },
+  "MODAL": {
+    "STOCK_AVAILABLE": "Available Stock",
+    "UNITS": "units",
+    "QUANTITY": "Quantity",
+    "TOTAL": "Total",
+    "CONTINUE_SHOPPING": "Add to cart",
+    "CHECKOUT": "Checkout"
+  }
+}

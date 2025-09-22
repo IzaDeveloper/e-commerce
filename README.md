@@ -8,7 +8,7 @@ Choose your language / Escolha seu idioma
 
 ## English
 
-An e-commerce application built with Angular, TypeScript, and Sass. It features a shopping cart, product catalog, discount support, and a RESTful API using json-server. Deploy-ready for platforms like Render.
+An e-commerce application built with Angular, TypeScript, and Sass. It features a shopping cart, product catalog, discount support, and a RESTful API using json-server and supports multiple languages (PT/EN). Deploy-ready for platforms like Render.
 
 
 ## 🚀 Features
@@ -20,6 +20,7 @@ An e-commerce application built with Angular, TypeScript, and Sass. It features 
 - ✅ Backend mock with JSON Server
 - ✅ Deployment-ready (frontend + backend)
 - ✅ Responsive and styled with Sass
+- ✅ Multi-language support (🇧🇷 Portuguese / 🇺🇸 English)
 
 ## 🖼️ Preview
 
@@ -90,7 +91,7 @@ Developed by [Izabelle](https://github.com/IzaDeveloper) 💻
 
 ## Português
 
-Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta com listagem de produtos, carrinho de compras, suporte a descontos e API REST simulada com json-server. Pronto para deploy em plataformas como Render.
+Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta com listagem de produtos, carrinho de compras, suporte a descontos e API REST simulada com json-server e suporte a múltiplos idiomas (PT/EN). Pronto para deploy em plataformas como Render.
 
 ## 🚀 Funcionalidades
 
@@ -101,6 +102,7 @@ Um aplicativo de e-commerce desenvolvido com Angular, TypeScript e Sass. Conta c
 - ✅ API fake com JSON Server
 - ✅ Pronto para deploy (frontend + backend)
 - ✅ Responsivo e estilizado com Sass
+- ✅ Suporte a múltiplos idiomas (🇧🇷 Português / 🇺🇸 Inglês)
 
 ## 🖼️ Demonstração
 

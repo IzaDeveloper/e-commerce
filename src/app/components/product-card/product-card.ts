@@ -4,13 +4,15 @@ import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
 import { CartService } from '../../services/cart';
 import { ModalComponnent } from '../../shared/modal/modal';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-card',
   imports: [
     CommonModule,
     RouterModule,
-    ModalComponnent
+    ModalComponnent,
+    TranslateModule
   ],
   templateUrl: './product-card.html',
   styleUrl: './product-card.scss'

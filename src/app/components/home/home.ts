@@ -6,33 +6,39 @@ import { ProductService } from '../../services/product';
 import { ProductCardComponent } from "../product-card/product-card";
 import { LoadingComponent } from '../../shared/loading/loading';
 import { BannerCarouselComponent } from "../../shared/banner-carousel/banner-carousel";
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-home',
+  standalone: true,
   imports: [
     CommonModule,
     RouterModule,
     ProductCardComponent,
     LoadingComponent,
-    BannerCarouselComponent
-],
+    BannerCarouselComponent,
+    TranslateModule
+  ],
   templateUrl: './home.html',
   styleUrl: './home.scss'
 })
 export class HomeComponent implements OnInit {
   products: Product[] = [];
-  lancamentos: Product[] = [];
-  maisVendidos: Product[] = [];
-  ofertas: Product[] = [];
   currentCategory: string = '';
-  activeFilter: 'all' | 'lancamentos' | 'mais-vendidos' | 'ofertas' | 'categoria' = 'all';
-
   loading = false;
+
+  activeFilter: 'all' | 'new' | 'bestsellers' | 'offer' | 'category' = 'all';
+
+  private tagMap: Record<string, string> = {
+    'new': 'new',
+    'bestsellers': 'bestsellers',
+    'offer': 'offer'
+  };
 
   constructor(
     private productService: ProductService,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -41,17 +47,14 @@ export class HomeComponent implements OnInit {
       const category = params['category'];
       const offer = offerParam === 'true' || offerParam === true;
 
-      if (tag === 'lancamento') {
-        this.activeFilter = 'lancamentos';
-        this.loadByTag(tag);
-      } else if (tag === 'mais-vendido') {
-        this.activeFilter = 'mais-vendidos';
+      if (tag === 'new' || tag === 'bestsellers') {
+        this.activeFilter = tag;
         this.loadByTag(tag);
       } else if (offer) {
-        this.activeFilter = 'ofertas';
+        this.activeFilter = 'offer';
         this.loadOffers();
       } else if (category) {
-        this.activeFilter = 'categoria';
+        this.activeFilter = 'category';
         this.currentCategory = category;
         this.loadCategory(category);
       } else {
@@ -62,58 +65,45 @@ export class HomeComponent implements OnInit {
   }
 
   loadAll(): void {
-    this.loading = true;
+    this.setLoading(true);
     this.productService.getAll().subscribe({
-      next: prods => {
-        this.products = prods;
-        this.loading = false;
-      },
-      error: () => {
-        this.products = [];
-        this.loading = false;
-      }
+      next: products => this.setProducts(products),
+      error: () => this.setProducts([])
     });
   }
 
   loadOffers(): void {
-    this.loading = true;
+    this.setLoading(true);
     this.productService.getOffers().subscribe({
-      next: prods => {
-        this.products = prods;
-        this.loading = false;
-      },
-      error: () => {
-        this.products = [];
-        this.loading = false;
-      }
+      next: products => this.setProducts(products),
+      error: () => this.setProducts([])
     });
   }
 
   loadByTag(tag: string): void {
-    this.loading = true;
-    this.productService.getByTag(tag).subscribe({
-      next: prods => {
-        this.products = prods;
-        this.loading = false;
-      },
-      error: () => {
-        this.products = [];
-        this.loading = false;
-      }
+    const translatedTag = this.tagMap[tag] || tag;
+
+    this.setLoading(true);
+    this.productService.getByTag(translatedTag).subscribe({
+      next: products => this.setProducts(products),
+      error: () => this.setProducts([])
     });
   }
 
   loadCategory(category: string): void {
-    this.loading = true;
+    this.setLoading(true);
     this.productService.getByCategory(category).subscribe({
-      next: prods => {
-        this.products = prods;
-        this.loading = false;
-      },
-      error: () => {
-        this.products = [];
-        this.loading = false;
-      }
+      next: products => this.setProducts(products),
+      error: () => this.setProducts([])
     });
+  }
+
+  private setProducts(products: Product[]): void {
+    this.products = products;
+    this.loading = false;
+  }
+
+  private setLoading(isLoading: boolean): void {
+    this.loading = isLoading;
   }
 }

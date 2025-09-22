@@ -4,7 +4,7 @@
   <div class="product-card__body">
     <div class="product-card__detail">
       <h3>{{ product.name }}</h3>
-    <p>{{ product.description }}</p>
+      <p>{{ product.description }}</p>
     </div>
 
     <p class="product-card__price">
@@ -12,7 +12,7 @@
         <span class="original-price">{{ product.price | currency:'BRL' }}</span>
         <span class="offer-price">{{ product.offerPrice | currency:'BRL' }}</span>
         <span class="discount-percent">
-          ({{ calculateDiscount(product.price, product.offerPrice) }}% OFF)
+          ({{ calculateDiscount(product.price, product.offerPrice) }}% {{ 'PRODUCT_CARD.OFF' | translate }})
         </span>
       </ng-container>
 
@@ -22,14 +22,20 @@
     </p>
 
     <div class="product-card__buttons">
-      <a class="product-card__btn-details" [routerLink]="['/product', product.id]">Ver detalhes</a>
+      <a class="product-card__btn-details" [routerLink]="['/product', product.id]">
+        {{ 'PRODUCT_CARD.VIEW_DETAILS' | translate }}
+      </a>
 
       <button class="product-card__btn-cart" (click)="addToCart(product)">
-        Adicionar ao carrinho
+        {{ 'PRODUCT_CARD.ADD_TO_CART' | translate }}
       </button>
     </div>
   </div>
 
-  <app-modal [product]="selectedProduct" [show]="showModal" (close)="closeModal()"
-    (confirm)="onConfirmAdd($event)"></app-modal>
+  <app-modal
+    [product]="selectedProduct"
+    [show]="showModal"
+    (close)="closeModal()"
+    (confirm)="onConfirmAdd($event)">
+  </app-modal>
 </div>

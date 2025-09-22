@@ -5,12 +5,14 @@ import { Product } from '../../models/product.model';
 import { CartService } from '../../services/cart';
 import { CommonModule, Location } from '@angular/common';
 import { ModalComponnent } from '../../shared/modal/modal';
+import { TranslateModule } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-product-detail',
   imports: [
     CommonModule,
-    ModalComponnent
+    ModalComponnent,
+    TranslateModule
   ],
   templateUrl: './product-detail.html',
   styleUrl: './product-detail.scss'

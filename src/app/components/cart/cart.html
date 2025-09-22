@@ -1,27 +1,26 @@
 <div class="container-layout">
-  <button class="btn-back" (click)="goBack()">← Voltar</button>
+  <button class="btn-back" (click)="goBack()">{{ 'CART.BACK' | translate }}</button>
 
-  <h2>Meu Carrinho</h2>
+  <h2>{{ 'CART.TITLE' | translate }}</h2>
 
   <div *ngIf="items.length === 0" class="empty-cart">
-    Seu carrinho está vazio.
+    {{ 'CART.EMPTY' | translate }}
   </div>
 
   <div class="cart-container" *ngIf="items.length !== 0">
-
-    <ul *ngIf="items.length > 0" class="cart-list">
+    <ul class="cart-list">
       <li *ngFor="let item of items; let i = index" class="cart-item">
         <div class="item-info">
           <img [src]="item.imageUrl" [alt]="item.name" class="product-image" />
           <div>
             <h3>{{ item.name }}</h3>
             <p>
-              Quantidade:
+              {{ 'CART.QUANTITY' | translate }}:
               <input type="number" [value]="item.quantity" min="1" [max]="item.stock"
                 (change)="updateQuantity(item.id, $event.target.valueAsNumber)" />
             </p>
             <p>
-              Preço unitário:
+              {{ 'CART.UNIT_PRICE' | translate }}:
               <span *ngIf="item.offer && item.offerPrice" class="original-price">
                 {{ item.price | currency:'BRL' }}
               </span>
@@ -33,11 +32,11 @@
               </span>
             </p>
             <p>
-              Valor total:
+              {{ 'CART.TOTAL_PRICE' | translate }}:
               <strong>
                 {{
-                (item.offer && item.offerPrice ? item.offerPrice : item.price)
-                * item.quantity | currency:'BRL'
+                  (item.offer && item.offerPrice ? item.offerPrice : item.price) * item.quantity
+                  | currency:'BRL'
                 }}
               </strong>
             </p>
@@ -50,16 +49,25 @@
       </li>
     </ul>
 
-    <div *ngIf="items.length > 0" class="cart-footer">
+    <div class="cart-footer">
       <div class="prices">
-        <p *ngIf="totalEconomia > 0" class="economia">Desconto: <strong>{{ totalEconomia | currency:'BRL' }}</strong>
+        <p *ngIf="totalEconomia > 0" class="economia">
+          {{ 'CART.DISCOUNT' | translate }}:
+          <strong>{{ totalEconomia | currency:'BRL' }}</strong>
         </p>
-        <p>Total: <strong>{{ total | currency:'BRL' }}</strong></p>
+        <p>
+          {{ 'CART.TOTAL' | translate }}:
+          <strong>{{ total | currency:'BRL' }}</strong>
+        </p>
       </div>
 
       <div class="buttons">
-        <button class="btn-confirm" (click)="addItems()">Continuar comprando</button>
-        <button class="btn-buy" (click)="checkout()">Comprar</button>
+        <button class="btn-confirm" (click)="addItems()">
+          {{ 'CART.CONTINUE' | translate }}
+        </button>
+        <button class="btn-buy" (click)="checkout()">
+          {{ 'CART.BUY' | translate }}
+        </button>
       </div>
     </div>
   </div>

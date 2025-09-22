@@ -1,0 +1,104 @@
+{
+  "HEADER": {
+    "HOME": "Home",
+    "CART": "Carrinho",
+    "PRODUCTS": {
+      "TITLE": "Produtos",
+      "LAUNCHES": "Lançamentos",
+      "BESTSELLERS": "Mais vendidos",
+      "OFFERS": "Ofertas",
+      "ALL": "Todos os produtos"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categorias",
+      "CLOTHES": "Roupas",
+      "SHOES": "Calçados",
+      "ACCESSORIES": "Acessórios"
+    },
+    "LANGUAGE": {
+      "PT": "PT",
+      "EN": "EN"
+    }
+  },
+  "FOOTER": {
+    "PRODUCTS": {
+      "TITLE": "Produtos",
+      "LAUNCHES": "Lançamentos",
+      "BESTSELLERS": "Mais vendidos",
+      "OFFERS": "Ofertas",
+      "ALL_PRODUCTS": "Todos os produtos"
+    },
+    "CATEGORIES": {
+      "TITLE": "Categorias",
+      "ALL": "Todas",
+      "CLOTHES": "Roupas",
+      "SHOES": "Calçados",
+      "ACCESSORIES": "Acessórios"
+    },
+    "SUPPORT": {
+      "TITLE": "Suporte",
+      "SUPPORT": "Atendimento",
+      "FAQ": "Perguntas frequentes",
+      "EXCHANGES": "Trocas e devoluções",
+      "CONTACT": "Fale conosco"
+    },
+    "INFO": {
+      "TITLE": "Informações",
+      "ABOUT_US": "Sobre nós",
+      "PRIVACY_POLICY": "Política de privacidade",
+      "TERMS_OF_USE": "Termos de uso",
+      "PAYMENT_METHODS": "Formas de pagamento"
+    },
+    "SOCIAL": {
+      "TITLE": "Redes Sociais"
+    },
+    "RIGHTS_RESERVED": "Todos os direitos reservados."
+  },
+  "HOME": {
+    "PRODUCTS": "Produtos",
+    "CATEGORY": "Categoria",
+    "LAUNCHES": "Lançamentos",
+    "BESTSELLERS": "Mais vendidos",
+    "OFFERS": "Ofertas",
+    "ALL_PRODUCTS": "Todos os Produtos",
+    "NO_PRODUCTS": "Nenhum produto encontrado."
+  },
+  "CART": {
+    "TITLE": "Meu Carrinho",
+    "EMPTY": "Seu carrinho está vazio.",
+    "UNIT_PRICE": "Preço unitário",
+    "TOTAL_PRICE": "Valor total",
+    "DISCOUNT": "Desconto",
+    "TOTAL": "Total",
+    "CONTINUE": "Continuar comprando",
+    "BUY": "Comprar",
+    "BACK": "← Voltar",
+    "QUANTITY": "Quantidade"
+  },
+  "PRODUCT_CARD": {
+    "VIEW_DETAILS": "Ver detalhes",
+    "ADD_TO_CART": "Adicionar ao carrinho",
+    "OFF": "OFF"
+  },
+  "PRODUCT_DETAIL": {
+    "BACK": "Voltar",
+    "CATEGORY": "Categoria",
+    "BRAND": "Marca",
+    "STOCK": "Em estoque",
+    "UNITS": "unidades",
+    "TAGS": "Tags",
+    "NOT_AVAILABLE": "N/A",
+    "NOT_PROVIDED": "Não informado",
+    "NONE": "Nenhuma",
+    "OFF": "OFF",
+    "ADD_TO_CART": "Adicionar ao carrinho"
+  },
+  "MODAL": {
+    "STOCK_AVAILABLE": "Estoque disponível",
+    "UNITS": "unidades",
+    "QUANTITY": "Quantidade",
+    "TOTAL": "Total",
+    "CONTINUE_SHOPPING": "Adicionar ao carrinho",
+    "CHECKOUT": "Finalizar compra"
+  }
+}

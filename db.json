@@ -2,114 +2,222 @@
   "products": [
     {
       "id": "1",
-      "name": "Tênis Esportivo",
-      "description": "Tênis confortável para corrida",
+      "name": {
+        "pt": "Tênis Esportivo",
+        "en": "Sports Sneakers"
+      },
+      "description": {
+        "pt": "Tênis confortável para corrida",
+        "en": "Comfortable running sneakers"
+      },
       "price": 199.90,
       "offerPrice": 159.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/tenis-esportivo.png",
-      "category": "Calçados",
-      "tags": ["lancamento"],
+      "category": {
+        "pt": "Calçados",
+        "en": "Shoes"
+      },
+      "tags": ["new"],
       "offer": true,
       "stock": 10,
-      "brand": "Nike"
+      "brand": {
+        "pt": "Nike",
+        "en": "Nike"
+      }
     },
     {
       "id": "2",
-      "name": "Tênis Casual",
-      "description": "Estilo urbano e moderno",
+      "name": {
+        "pt": "Tênis Casual",
+        "en": "Casual Sneakers"
+      },
+      "description": {
+        "pt": "Estilo urbano e moderno",
+        "en": "Urban and modern style"
+      },
       "price": 179.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/tenis-casual.png",
-      "category": "Calçados",
-      "tags": ["mais-vendido"],
+      "category": {
+        "pt": "Calçados",
+        "en": "Shoes"
+      },
+      "tags": ["bestsellers"],
       "offer": false,
       "stock": 5,
-      "brand": "Adidas"
+      "brand": {
+        "pt": "Adidas",
+        "en": "Adidas"
+      }
     },
     {
       "id": "3",
-      "name": "Chinelo Confort",
-      "description": "Ideal para o verão",
+      "name": {
+        "pt": "Chinelo Confort",
+        "en": "Comfort Flip-flops"
+      },
+      "description": {
+        "pt": "Ideal para o verão",
+        "en": "Ideal for summer"
+      },
       "price": 49.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/chinelo.png",
-      "category": "Calçados",
+      "category": {
+        "pt": "Calçados",
+        "en": "Shoes"
+      },
       "tags": [],
       "offer": false,
       "stock": 15,
-      "brand": "Havaianas"
+      "brand": {
+        "pt": "Havaianas",
+        "en": "Havaianas"
+      }
     },
     {
       "id": "4",
-      "name": "Camiseta Básica",
-      "description": "Camiseta 100% algodão",
+      "name": {
+        "pt": "Camiseta Básica",
+        "en": "Basic T-shirt"
+      },
+      "description": {
+        "pt": "Camiseta 100% algodão",
+        "en": "100% cotton t-shirt"
+      },
       "price": 49.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/camiseta.png",
-      "category": "Roupas",
-      "tags": ["mais-vendido"],
+      "category": {
+        "pt": "Roupas",
+        "en": "Clothes"
+      },
+      "tags": ["bestsellers"],
       "offer": false,
       "stock": 20,
-      "brand": "Reserva"
+      "brand": {
+        "pt": "Reserva",
+        "en": "Reserva"
+      }
     },
     {
       "id": "5",
-      "name": "Jaqueta Jeans",
-      "description": "Clássica e estilosa",
+      "name": {
+        "pt": "Jaqueta Jeans",
+        "en": "Denim Jacket"
+      },
+      "description": {
+        "pt": "Clássica e estilosa",
+        "en": "Classic and stylish"
+      },
       "price": 229.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/jaqueta.png",
-      "category": "Roupas",
-      "tags": ["lancamento"],
+      "category": {
+        "pt": "Roupas",
+        "en": "Clothes"
+      },
+      "tags": ["new"],
       "offer": false,
       "stock": 8,
-      "brand": "Levi's"
+      "brand": {
+        "pt": "Levi's",
+        "en": "Levi's"
+      }
     },
     {
       "id": "6",
-      "name": "Vestido Floral",
-      "description": "Ideal para o verão",
+      "name": {
+        "pt": "Vestido Floral",
+        "en": "Floral Dress"
+      },
+      "description": {
+        "pt": "Ideal para o verão",
+        "en": "Ideal for summer"
+      },
       "price": 139.90,
       "offerPrice": 99.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/vestido.png",
-      "category": "Roupas",
-      "tags": ["oferta"],
+      "category": {
+        "pt": "Roupas",
+        "en": "Clothes"
+      },
+      "tags": ["offer"],
       "offer": true,
       "stock": 12,
-      "brand": "Zara"
+      "brand": {
+        "pt": "Zara",
+        "en": "Zara"
+      }
     },
     {
       "id": "7",
-      "name": "Mochila",
-      "description": "Mochila para uso diário",
+      "name": {
+        "pt": "Mochila",
+        "en": "Backpack"
+      },
+      "description": {
+        "pt": "Mochila para uso diário",
+        "en": "Backpack for daily use"
+      },
       "price": 89.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/mochila.png",
-      "category": "Acessórios",
-      "tags": ["mais-vendido"],
+      "category": {
+        "pt": "Acessórios",
+        "en": "Accessories"
+      },
+      "tags": ["bestsellers"],
       "offer": false,
       "stock": 18,
-      "brand": "Nordweg"
+      "brand": {
+        "pt": "Nordweg",
+        "en": "Nordweg"
+      }
     },
     {
       "id": "8",
-      "name": "Relógio Esportivo",
-      "description": "Resistente à água e moderno",
+      "name": {
+        "pt": "Relógio Esportivo",
+        "en": "Sports Watch"
+      },
+      "description": {
+        "pt": "Resistente à água e moderno",
+        "en": "Water-resistant and modern"
+      },
       "price": 299.90,
       "offerPrice": 249.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/relogio-esportivo.png",
-      "category": "Acessórios",
-      "tags": ["lancamento"],
+      "category": {
+        "pt": "Acessórios",
+        "en": "Accessories"
+      },
+      "tags": ["new"],
       "offer": true,
       "stock": 6,
-      "brand": "G-Shock"
+      "brand": {
+        "pt": "G-Shock",
+        "en": "G-Shock"
+      }
     },
     {
       "id": "9",
-      "name": "Boné",
-      "description": "Perfeito para dias de sol",
+      "name": {
+        "pt": "Boné",
+        "en": "Cap"
+      },
+      "description": {
+        "pt": "Perfeito para dias de sol",
+        "en": "Perfect for sunny days"
+      },
       "price": 59.90,
       "imageUrl": "https://e-commerce-buy-things.vercel.app/images/bone.png",
-      "category": "Acessórios",
+      "category": {
+        "pt": "Acessórios",
+        "en": "Accessories"
+      },
       "tags": [],
       "offer": false,
       "stock": 25,
-      "brand": "New Era"
+      "brand": {
+        "pt": "New Era",
+        "en": "New Era"
+      }
     }
   ]
 }
