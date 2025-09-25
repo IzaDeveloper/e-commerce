@@ -1,8 +1,9 @@
 import { Component, inject, signal } from '@angular/core';
-import { Router, RouterOutlet } from '@angular/router';
+import { NavigationEnd, Router, RouterOutlet } from '@angular/router';
 import { FooterComponent } from "./components/footer/footer";
 import { HeaderComponent } from "./components/header/header";
 import { LoadingService } from './services/loading';
+import { filter } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -20,10 +21,12 @@ export class App {
   private router = inject(Router);
 
   constructor() {
-    this.router.events.subscribe(event => {
-      if (event.constructor.name === 'NavigationEnd') {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }
-    });
+    this.router.events
+      .pipe(filter(event => event instanceof NavigationEnd))
+      .subscribe(() => {
+        setTimeout(() => {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        }, 0);
+      });
   }
 }

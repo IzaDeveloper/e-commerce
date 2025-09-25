@@ -85,6 +85,7 @@ export class HeaderComponent implements OnInit, OnDestroy {
     const target = event.target as HTMLElement;
     if (!target.closest('.header')) {
       this.closeDropdowns();
+      this.closeMenu();
     }
   }
 
