@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { map, Observable } from 'rxjs';
+import { map, Observable, shareReplay } from 'rxjs';
 import { Product } from '../models/product.model';
 import { TranslateService } from '@ngx-translate/core';
 
@@ -9,12 +9,12 @@ import { TranslateService } from '@ngx-translate/core';
 })
 export class ProductService {
   private apiUrl = 'https://e-commerce-em5x.onrender.com/products';
+  private productsCache$: Observable<Product[]> | null = null;
 
-  constructor(private http: HttpClient, private translate: TranslateService) { }
+  constructor(private http: HttpClient, private translate: TranslateService) {}
 
   private translateProduct(product: any): Product {
     const lang = this.translate.currentLang || 'pt';
-
     return {
       ...product,
       name: product.name[lang],
@@ -25,9 +25,17 @@ export class ProductService {
   }
 
   getAll(): Observable<Product[]> {
-    return this.http.get<any[]>(this.apiUrl).pipe(
-      map(products => products.map(p => this.translateProduct(p)))
-    );
+    if (!this.productsCache$) {
+      this.productsCache$ = this.http.get<any[]>(this.apiUrl).pipe(
+        map(products => products.map(p => this.translateProduct(p))),
+        shareReplay(1)
+      );
+    }
+    return this.productsCache$;
+  }
+
+  clearCache(): void {
+    this.productsCache$ = null;
   }
 
   getById(id: string): Observable<Product> {
@@ -36,12 +44,7 @@ export class ProductService {
     );
   }
 
-  getAllRaw(): Observable<any[]> {
-    return this.http.get<any[]>(this.apiUrl);
-  }
-
   getByTag(tag: string): Observable<Product[]> {
-    console.log('[Service - tag recebida]', tag);
     return this.getAll().pipe(
       map(products =>
         products.filter(p =>
@@ -53,14 +56,12 @@ export class ProductService {
   }
 
   getByCategory(category: string): Observable<Product[]> {
-    return this.getAllRaw().pipe(
+    return this.getAll().pipe(
       map(products =>
         products.filter(p =>
-          p.category.pt.toLowerCase() === category.toLowerCase() ||
-          p.category.en.toLowerCase() === category.toLowerCase()
+          p.category?.toLowerCase() === category.toLowerCase()
         )
-      ),
-      map(products => products.map(p => this.translateProduct(p)))
+      )
     );
   }
 

@@ -7,10 +7,10 @@ import { ProductCardComponent } from "../product-card/product-card";
 import { LoadingComponent } from '../../shared/loading/loading';
 import { BannerCarouselComponent } from "../../shared/banner-carousel/banner-carousel";
 import { TranslateModule } from '@ngx-translate/core';
+import { LoadingService } from '../../services/loading';
 
 @Component({
   selector: 'app-home',
-  standalone: true,
   imports: [
     CommonModule,
     RouterModule,
@@ -25,7 +25,6 @@ import { TranslateModule } from '@ngx-translate/core';
 export class HomeComponent implements OnInit {
   products: Product[] = [];
   currentCategory: string = '';
-  loading = false;
 
   activeFilter: 'all' | 'new' | 'bestsellers' | 'offer' | 'category' = 'all';
 
@@ -37,8 +36,9 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private route: ActivatedRoute
-  ) {}
+    private route: ActivatedRoute,
+    public loadingService: LoadingService
+  ) { }
 
   ngOnInit(): void {
     this.route.queryParams.subscribe(params => {
@@ -65,7 +65,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadAll(): void {
-    this.setLoading(true);
+    this.loadingService.show();
     this.productService.getAll().subscribe({
       next: products => this.setProducts(products),
       error: () => this.setProducts([])
@@ -73,7 +73,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadOffers(): void {
-    this.setLoading(true);
+    this.loadingService.show();
     this.productService.getOffers().subscribe({
       next: products => this.setProducts(products),
       error: () => this.setProducts([])
@@ -82,8 +82,7 @@ export class HomeComponent implements OnInit {
 
   loadByTag(tag: string): void {
     const translatedTag = this.tagMap[tag] || tag;
-
-    this.setLoading(true);
+    this.loadingService.show();
     this.productService.getByTag(translatedTag).subscribe({
       next: products => this.setProducts(products),
       error: () => this.setProducts([])
@@ -91,7 +90,7 @@ export class HomeComponent implements OnInit {
   }
 
   loadCategory(category: string): void {
-    this.setLoading(true);
+    this.loadingService.show();
     this.productService.getByCategory(category).subscribe({
       next: products => this.setProducts(products),
       error: () => this.setProducts([])
@@ -100,10 +99,10 @@ export class HomeComponent implements OnInit {
 
   private setProducts(products: Product[]): void {
     this.products = products;
-    this.loading = false;
+    this.loadingService.hide();
   }
 
-  private setLoading(isLoading: boolean): void {
-    this.loading = isLoading;
-  }
+  // private setLoading(isLoading: boolean): void {
+  //   this.loading = isLoading;
+  // }
 }

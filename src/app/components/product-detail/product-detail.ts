@@ -39,7 +39,7 @@ export class ProductComponent implements OnInit {
     if (id) {
       this.productService.getById(id).subscribe({
         next: (data) => this.product = data,
-        error: (error) => console.error('Erro ao buscar produto:', error)
+        error: (error) => console.error('Error:', error)
       });
     }
   }
